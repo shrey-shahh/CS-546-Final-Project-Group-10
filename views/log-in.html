@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Log In</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="stylesheet" type="text/css" href="/site.css" />
+  </head>
+<body class="body-center">
+    <form class="form" id="login-form" method="POST" action="/login">
+        <h1>Log In Form</h1> 
+        <h2 class="error">{{error}}</h2>
+        <label>Email : </label>
+        <input class="input-field" type="text" id="email" name="email" value="{{email}}" placeholder="email"/>
+        <label>Password : </label>
+        <input class="input-field" type="password" id="password" name="password" value="{{password}}" placeholder="password"/>
+        <input type="submit" value="Log In" />
+        <a href="/company-signup">Company Registration ? Click here to sign-up
+        </a>
+        <br/>
+        <a href="/jobseeker-signup">Job Seeker Registration ? Click here to sign-up
+        </a>
+    </form>
+</body>
+</html>

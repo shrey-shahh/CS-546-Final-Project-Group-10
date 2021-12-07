@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="stylesheet" type="text/css" href="/site.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        th {
+            text-align: center;
+        }
+        
+        li {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar" style="width:100%">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Job Portal System</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a class="btn" href="/">Home</a></li>
+                    <li class="btn-success"><a style="color:white" href="jobs">Jobs</a></li>
+                    <li class="btn-danger"><a style="color:white" href="login">Login</a></li>
+                    <li class="btn-warning"><a style="color:white" href="company-signup">Company Registration</a></li>
+                    <li class="btn-primary"><a style="color:white" href="jobseeker-signup">Job Seeker Registration</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="row col-lg-12">
+        <div class="col-lg-3">
+            <label>Search By Job Type :</label>
+            <select class="form-control" onchange="selected(this.value)">
+        <option value="" selected>All</option>
+        <option value="Internship">Internship</option>
+        <option value="Full Time">Full Time</option>
+        <option value="Part Time">Part Time</option>
+    </select>
+        </div>
+    </div>
+    <h1>Job List</h1>
+    <table id="jobListTable" class="table">
+        <tr>
+            <th>Job Title</th>
+            <th>Job Type</th>
+            <th>Field</th>
+            <th>Job Location</th>
+            <th>Job Description</th>
+            <th>Experience</th>
+            <th>Salary</th>
+            <th>Vacancy</th>
+        </tr>
+    </table>
+</body>
+<script>
+    const mainUrl = "http://localhost:3000/api/";
+    var jobList = [];
+    $(document).ready(function() {
+        $.ajax({
+            url: mainUrl + "get-jobs",
+            method: 'get',
+            success: function(result) {
+                jobList = result;
+                let html = "";
+                for (i = 0; i < result.length; i++) {
+                    html = html + "<tr>" +
+                        "<a href=\"http://localhost:3000/api/get-job/" + result[i]._id + "\">" + 
+                        "<td>" + result[i].title + "</td>" +
+                        "<td>" + result[i].jobtype + "</td>" +
+                        "<td>" + result[i].fieldtype + "</td>" +
+                        "<td>" + result[i].location + "</td>" +
+                        "<td>" + result[i].description + "</td>" +
+                        "<td>" + result[i].experience + "</td>" +
+                        "<td>" + result[i].salaryrange + "</td>" +
+                        "<td>" + result[i].vacancy + "</td>" +
+                        "</a>"+
+                        "</tr>"
+                }
+                if (!$("#jobListTable")[0].outerHTML.toString().includes("<td>")) {
+                    $("#jobListTable").append(html);
+                }
+            }
+        });
+    });
+
+    function selected(value) {
+        var result = [];
+        if (value) {
+            result = jobList.filter(x => x.jobtype == value)
+        } else {
+            result = jobList;
+        }
+        $("#jobListTable").empty();
+        let html = "<tbody><tr><th>Job Title</th><th>Job Type</th><th>Field</th><th>Job Location</th><th>Job Description</th><th>Experience</th><th>Salary</th><th>Vacancy</th></tr>";
+        for (i = 0; i < result.length; i++) {
+            html = html + "<tr>" +
+                "<a href=\"http://localhost:3000/api/get-job/" + result[i]._id + "\">" + 
+                "<td>" + result[i].jobtype + "</td>" +
+                "<td>" + result[i].fieldtype + "</td>" +
+                "<td>" + result[i].location + "</td>" +
+                "<td>" + result[i].description + "</td>" +
+                "<td>" + result[i].experience + "</td>" +
+                "<td>" + result[i].salaryrange + "</td>" +
+                "<td>" + result[i].vacancy + "</td>" +
+                "</a>"+
+                "</tr>"
+        }
+        html = html + "</tbody>"
+        console.log(html);
+        $("#jobListTable").append(html);
+    }
+</script>
+
+</html>

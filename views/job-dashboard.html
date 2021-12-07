@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Job description</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="stylesheet" type="text/css" href="/site.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="client.js"></script>
+  </head>
+<body>
+  <div class="w3-sidebar w3-orange w3-bar-block" style="width:20%">
+    <h3 class="w3-bar-item">Job description</h3>
+    <a href="#" onclick="homeClicked()" class="w3-bar-item w3-button active">Home</a>
+    <a href="#" onclick="searchJobClicked()" class="w3-bar-item w3-button">Search Jobs</a>
+    <a href="#" onclick="viewApplicationsClicked()" class="w3-bar-item w3-button">View Applications</a>
+    <a href="#" onclick="profileClicked()" class="w3-bar-item w3-button">Profile</a>
+    <a href="#" onclick="feedbackClicked()" class="w3-bar-item w3-button">Feedback</a>
+    <a href="#" onclick="changePasswordClicked()" class="w3-bar-item w3-button">Change Password</a>
+    <a href="/logout" class="w3-bar-item w3-button">Log-Out</a>
+  </div>
+  <!-- Page Content -->
+  <div id="home" style="margin-left:20%">
+    <br/>
+    <h1>Dashboard</h1>
+    <h2 class="w3-blue">Welcome {{email}}</h2>
+  </div>
+  <div id="searchjob">
+    Search Job Html Goes here
+ </div>
+ <div id="viewapplicaions">
+  View Applications Html Goes here
+</div>
+       
+    <h1>Job description</h1>
+    <table id="JobdescriptionTable" class="table">
+        <tr>
+            <th>Job Title</th><td>{{title}}</td>
+        </tr><tr>
+            <th>Job Type</th><td>{{jobtype}}</td>
+        </tr><tr>
+            <th>Field</th><td>{{fieldtype}}</td>
+        </tr><tr>
+            <th>Job Location</th><td>{{location}}</td>
+        </tr><tr>
+            <th>Job Description</th><td>{{description}}</td>
+        </tr><tr>
+            <th>Experience</th><td>{{experience}}</td>
+        </tr><tr>
+            <th>Salary</th><td>{{salaryrange}}</td>
+        </tr><tr>
+            <th>Vacancy</th><td>{{vacancy}}</td>
+        </tr>
+    </table>
+
+    <form class="form" id="apply-form" encType="multipart/form-data" method="POST" action="/apply">
+        <input type="hidden" id="jobId" name="jobId" value="{{jobid}}" />
+        <input type="hidden" id="jobseekerId" name="jobseekerId" value="{{seekerid}}" />
+        <input type="hidden" id="companyId" name="companyId" value="{{companyid}}" />
+        <input type="hidden" id="jobStatus" name="jobStatus" value="waiting" />
+        <input type="submit" value="Apply" />
+    </form>
+</div>
+<div id="feedback">
+  Feedback Html Goes here
+</div>
+
+
+</body>
+</html>

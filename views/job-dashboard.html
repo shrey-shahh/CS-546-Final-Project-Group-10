@@ -10,6 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="client.js"></script>
   </head>
+
 <body>
   <div class="w3-sidebar w3-orange w3-bar-block" style="width:20%">
     <h3 class="w3-bar-item">Job description</h3>
@@ -20,24 +21,19 @@
     <a href="#" onclick="feedbackClicked()" class="w3-bar-item w3-button">Feedback</a>
     <a href="#" onclick="changePasswordClicked()" class="w3-bar-item w3-button">Change Password</a>
     <a href="/logout" class="w3-bar-item w3-button">Log-Out</a>
-  </div>
-  <!-- Page Content -->
-  <div id="home" style="margin-left:20%">
+</div>
+
+<!-- Page Content -->
+<div id="home" style="margin-left:20%">
     <br/>
     <h1>Dashboard</h1>
     <h2 class="w3-blue">Welcome {{email}}</h2>
-  </div>
-  <div id="searchjob">
-    Search Job Html Goes here
- </div>
- <div id="viewapplicaions">
-  View Applications Html Goes here
-</div>
-       
-    <h1>Job description</h1>
-    <table id="JobdescriptionTable" class="table">
-        <tr>
-            <th>Job Title</th><td>{{title}}</td>
+ </br>
+
+<h1>Job description</h1>
+<table id="JobdescriptionTable" class="table">
+    <tr>
+        <th>Job Title</th><td>{{title}}</td>
         </tr><tr>
             <th>Job Type</th><td>{{jobtype}}</td>
         </tr><tr>
@@ -53,7 +49,7 @@
         </tr><tr>
             <th>Vacancy</th><td>{{vacancy}}</td>
         </tr>
-    </table>
+</table>
 
     <form class="form" id="apply-form" encType="multipart/form-data" method="POST" action="/apply">
         <input type="hidden" id="jobId" name="jobId" value="{{jobid}}" />

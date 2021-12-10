@@ -1,0 +1,28 @@
+<section>
+<div>
+    <br/>
+        <h1>Job List</h1>
+    </br>
+    <table id="jobListTable" class="table">
+        <tr>
+            <th>Job Title</th>
+            <th>Job Type</th>
+            <th>Field</th>
+            <th>Experience</th>
+            <th>Salary</th>
+            <th>Vacancy</th>
+        </tr>
+        {{#each joblist}}  
+        <tr>
+            <td><a href="//get-job/{{_id}}">{{title}}</a></td>
+            <td>{{jobtype}}</td>
+            <td>{{fieldtype}}</td>
+            <td>{{experience}}</td>
+            <td>{{salaryrange}}</td>
+            <td>{{vacancy}}</td>
+        </tr>
+        {{/each}}
+
+    </table>
+    </div>
+</section>

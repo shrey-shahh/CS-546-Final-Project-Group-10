@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{{title}}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="stylesheet" type="text/css" href="/site.css" /> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="client.js"></script>
+<style>
+    li{
+         margin-left:5px;
+         margin-right:5px;
+     }
+     input{
+        color:black;
+      }
+</style>
+</head>
+  <body>
+  <div class="navbar" style="width:100%">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">Job Portal System</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a class="btn" href="/">Home</a></li>
+                <li class="btn-success"><a style="color:white" href="jobs">Jobs</a></li>
+                <li class="btn-danger"><a style="color:white" href="login">Login</a></li>
+                <li class="btn-warning"><a style="color:white" href="company-signup">Company Registration</a></li>
+                <li class="btn-primary"><a style="color:white" href="jobseeker-signup">Job Seeker Registration</a></li>
+            </ul>
+            </div>
+    </nav>
+</div>
+<h1 class="w3-blue">Welcome {{email}}</h1>
+    <main>
+      {{{body}}}
+    </main>
+  </body>
+</html>
+
+

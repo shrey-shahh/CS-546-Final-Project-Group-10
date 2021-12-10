@@ -1,0 +1,39 @@
+<section>
+<div>
+    <br/>
+    <h1>Job Description for {{job.title}}</h1>
+    <h2 class="w3-blue">Welcome {{email}}</h2>
+    </br>
+    <table id="JobdescriptionTable" class="table">
+        <tr>
+            <th>Job Title: </th><td>{{job.title}}</td>
+        </tr><tr>
+            <th>Job Type: </th><td>{{job.jobtype}}</td>
+        </tr><tr>
+            <th>Field: </th><td>{{job.fieldtype}}</td>
+        </tr><tr>
+            <th>Job Location: </th><td>{{job.location}}</td>
+        </tr><tr>
+            <th>Job Description: </th><td>{{job.description}}</td>
+        </tr><tr>
+            <th>Experience: </th><td>{{job.experience}}</td>
+        </tr><tr>
+            <th>Salary: </th><td>{{job.salaryrange}}</td>
+        </tr><tr>
+            <th>Vacancy: </th><td>{{job.vacancy}}</td>
+        </tr>
+    </table>
+    </div>
+</section>
+
+<section>
+    <div>
+    <form class="form" id="apply-form" encType="multipart/form-data" method="POST" action="/apply">
+        <input type="hidden" id="jobId" name="jobId" value="{{job._id}}" />
+        <input type="hidden" id="jobseekerId" name="jobseekerId" value="{{seekerid}}" />
+        <input type="hidden" id="companyId" name="companyId" value="{{companyid}}" />
+        <input type="hidden" id="jobStatus" name="jobStatus" value="waiting" />
+        <input type="submit" value="Apply" />
+    </form>
+</div>
+</section>

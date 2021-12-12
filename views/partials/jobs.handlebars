@@ -1,0 +1,64 @@
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="stylesheet" type="text/css" href="/site.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="jobs.js"></script>
+    <style>
+        th{
+            text-align: center;
+        }
+        li{
+          margin-left:5px;
+          margin-right:5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar" style="width:100%">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">Job Portal System</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li><a class="btn" href="/">Home</a></li>
+                <li class="btn-success"><a style="color:white" href="jobs">Jobs</a></li>
+                <li class="btn-danger"><a style="color:white" href="login">Login</a></li>
+                <li class="btn-warning"><a style="color:white" href="company-signup">Company Registration</a></li>
+                <li class="btn-primary"><a style="color:white" href="jobseeker-signup">Job Seeker Registration</a></li>
+              </ul>
+            </div>
+          </nav>
+    </div>
+      <div class="row col-lg-12">
+          <div class="col-lg-3">
+      <label>Search By Job Type :</label>
+    <select class="form-control" onchange="selected(this.value)">
+        <option value="" selected>All</option>
+        <option value="Internship">Internship</option>
+        <option value="Full Time">Full Time</option>
+        <option value="Part Time">Part Time</option>
+    </select>
+</div>
+</div>
+    <h1>Job List</h1>
+    <table id="jobListTable" class="table">
+        <tr>
+        <th>Company</th>
+        <th>Job Title</th>
+        <th>Job Type</th>
+        <th>Field</th>
+        <th>Job Location</th>
+        <th>Job Description</th>
+        <th>Experience</th>
+        <th>Salary</th>
+        <th>Vacancy</th>
+        <th>Rating</th>
+        </tr>
+    </table>
+  </body>

@@ -1,4 +1,4 @@
-const users = require('../JobPortalSystem/data/users');
+const users = require('./data/users');
 
 
 async function runSetup() {

@@ -20,3 +20,5 @@ To run the application:
 *Login details for company that was created using the seed file:
   *Email: jpmorgan@gmail.com
    Password: 12345678
+
+*NOTE: In windows 11 we faced an unusual error with the database connection so to resolve that we made some in changes in the settings.json file in CONFIG folder. If you face a similar issue, change the "serverUrl" to "localhost:3000" in the settings.json file.

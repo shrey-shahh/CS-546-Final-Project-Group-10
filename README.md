@@ -21,6 +21,6 @@ To run the application:
   *Email: jpmorgan@gmail.com
    Password: 12345678
 
-When you try to change password at that time you must enter atleast 6 character if you will not enter minimum 6 characters then password will not be changed and it will logout and redirect on main-landing page of our website.
+*NOTE: When you attempt to change the password you must enter atleast 6 characters or else you will be redirected to the main page and the password will not change.
 
 *NOTE: In windows 11 we faced an unusual error with the database connection so to resolve that we made some in changes in the settings.json file in CONFIG folder. If you face a similar issue, change the "serverUrl" to "localhost:3000" in the settings.json file.
